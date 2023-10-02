@@ -1,4 +1,4 @@
-# Sertibot
+# Sirtibot
 Automatic Question Paper Generator
 
 In today’s educational landscape, the demand for efficient and streamlined processes has grown exponentially. One such critical task is the generation of question papers, which requires careful consideration of various factors like question bank management, subject distribution, difficulty levels, and formatting. To address this challenge, we have developed an automated Question Paper Generator using Django Python. 
