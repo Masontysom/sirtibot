@@ -13,6 +13,7 @@ Sirtibot is not just another tool; it's an educational revolution. Leveraging th
 
 
 To run the file user should run the folling commands in the command prompt : 
+```
 pip install django
 pip install nltk
 pip install transformers
@@ -22,3 +23,4 @@ pip install Pywsd
 pip install summarizer
 pip install fpdf
 pip install openpyxl
+```
