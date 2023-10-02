@@ -21,7 +21,8 @@ pip install openpyxl
 ```
 
 MCQ Generation Logic: The logic for preprocessing text, extracting keywords, generating summaries, and generating MCQs from the processed text. It follows the pattern of uploading a text file, reading its content, and then performing the required processing steps.
-Question : Api is used in it.
+
+Question : openai, Api is used in it.
 
 After all the pip are installed last step :
 
