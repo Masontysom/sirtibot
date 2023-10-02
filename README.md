@@ -13,4 +13,12 @@ Sirtibot is not just another tool; it's an educational revolution. Leveraging th
 
 
 To run the file user should run the folling commands in the command prompt : 
-[working code.txt](https://github.com/Masontysom/sertibot/files/12785192/working.code.txt)
+pip install django
+pip install nltk
+pip install transformers
+pip install openai
+pip install flashtext
+pip install Pywsd
+pip install summarizer
+pip install fpdf
+pip install openpyxl
