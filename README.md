@@ -30,10 +30,10 @@ Go to the folder where the manage.py file is seen usualy on the first page and o
 py manage.py runserver
 ```
 
-it will take some time for nltk to download and pwd so be patient.
+It will take some time for nltk to download and pwd so be patient.
 
 
-if want virtual Environment :
+(Optional)if want virtual Environment :
   ```
   py -m venv venv
   ```
@@ -49,8 +49,9 @@ if want virtual Environment :
 
 
 
-
+(error)
 if any error in data base :
 ```
 python manage.py migrate
 ```
+
