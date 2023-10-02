@@ -1,3 +1,0 @@
-The code you've posted appears to be an attempt to create a Django view that takes input from a text file, processes it, generates MCQs, and then renders them in a template. Overall, the code structure looks correct, but there are a few points that I'd like to highlight and clarify:
-
-MCQ Generation Logic: The code structure seems to correctly integrate the logic for preprocessing text, extracting keywords, generating summaries, and generating MCQs from the processed text. It follows the pattern of uploading a text file, reading its content, and then performing the required processing steps.
