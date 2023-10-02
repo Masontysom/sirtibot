@@ -1,0 +1,53 @@
+{% load static %}
+
+  <aside class="left-sidebar scrollable ps-container ps-theme-default ps-active-y" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="p-t-30">
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:dashboard' %}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:generate_mcqs' %}" aria-expanded="false"><i class="mdi mdi-tooltip-text"></i><span class="hide-menu">MCQ by Text</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:mcqtopdf' %}" aria-expanded="false"><i class="mdi mdi-file-pdf"></i><span class="hide-menu">MCQ by PDF</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:generate_questions' %}" aria-expanded="false"><i class="mdi mdi-note-text"></i><span class="hide-menu">Therotical by Text</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:theorytopdf' %}" aria-expanded="false"><i class="mdi mdi-file-pdf-box"></i><span class="hide-menu">Therotical by PDF</span></a></li>
+                        <!-- <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Manually set MCQ</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">    
+                                <li class="sidebar-item"><a href="{% url 'dashboard:addquestion' %}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Add Question </span></a></li>
+                                <li class="sidebar-item"><a href="{% url 'dashboard:manual_mcq' %}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> View Question</span></a></li>
+                                <li class="sidebar-item"><a href="{% url 'dashboard:manual_result' %}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Result</span></a></li>
+
+                            </ul>
+                        </li> -->
+                        <!-- <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Database</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">    
+                                <li class="sidebar-item"><a href="{% url 'dashboard:form-basic' %}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Form Basic </span></a></li>
+                                <li class="sidebar-item"><a href="{% url 'dashboard:form-wizard' %}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Form Wizard </span></a></li>
+                            </ul>
+                        </li> -->
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:upload_and_display_excel' %}" aria-expanded="false"><i class="mdi mdi-file-pdf-box"></i><span class="hide-menu">Excel</span></a></li>
+
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:generate_pdf' %}" aria-expanded="false"><i class="mdi mdi-file-pdf-box"></i><span class="hide-menu">PDF generator</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:display_question_form' %}" aria-expanded="false"><i class="mdi mdi-file-pdf-box"></i><span class="hide-menu">PDF Form generator</span></a></li>
+                        
+                        <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:tables' %}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span class="hide-menu">Tables</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:grid' %}" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Full Width</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Forms </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="{% url 'dashboard:form-basic' %}" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Form Basic </span></a></li>
+                                <li class="sidebar-item"><a href="{% url 'dashboard:form-wizard' %}" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Form Wizard </span></a></li>
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:buttons' %}" aria-expanded="false"><i class="mdi mdi-relative-scale"></i><span class="hide-menu">Buttons</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{% url 'dashboard:elements' %}" aria-expanded="false"><i class="mdi mdi-pencil"></i><span class="hide-menu">Elements</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Addons </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                            </ul>
+                        </li> -->
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>

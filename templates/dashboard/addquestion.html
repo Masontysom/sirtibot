@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% include "dashboard/dependencies.html" %}  
+
+{% load static %}
+{% block extra_css %}
+    <style xmlns="http://www.w3.org/1999/html">
+    </style>
+{% endblock %}
+{% block page_title %}
+ Grid
+{% endblock %}
+{% block content %}
+<div class="jumbotron container row">
+    <div class="col-md-6">
+        <h1>Add Question</h1>
+        <div class="card card-body">
+           <form action="/dashboard/manual_mcq.html" method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+                <br>
+             <input type="submit" name="Submit">
+             </form>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+{% endblock %}

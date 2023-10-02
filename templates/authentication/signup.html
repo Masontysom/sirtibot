@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Global Styles */
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* { 
+  margin: 10; 
+  padding: 0;
+  box-sizing: border-box; 
+  font-family: "Poppins", sans-serif; 
+}
+
+body {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100%;
+
+
+   
+/* background: url("static/image1.jpg") no-repeat;  */
+}
+
+/* .wrapper {
+width: 420px; 
+color: #fff;
+background: purple;
+} */
+
+.wrapper {
+width: 50%;
+background: purple; 
+color: #fff;
+border-radius: 10px;
+padding: 40px 40px;
+}
+.wrapper h1 {
+font-size: 36px; 
+text-align: center;
+}
+.wrapper input-box { 
+    position: relative;
+    margin: 30px 0;
+width: 100%;
+height: 100%;
+}
+.input-box input {
+width: 100%;
+height: 10px;
+background: transparent;
+border: none;
+outline: none;
+border: 2px solid rgba(255, 255, 255, .2);
+border-radius: 40px;
+font-size: 16px;
+color:#fff; 
+padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder { 
+    color: #fff;
+}
+.input-box i {
+position: absolute;
+right: 20px;
+top: 50%;
+transform: translateY(-50%);
+font-size: 20px;
+}
+.wrapper.remember-forgot {
+display: flex; 
+justify-content: space-between; 
+font-size: 13.5px; 
+margin: -15px 0 15px;
+}
+.remember-forgot label input { 
+    accent-color:#fff; 
+    margin-right: 3px;
+}
+.remember-forgot a {
+color: #fff;
+text-decoration: none;
+}
+remember-forgot a:hover { 
+    text-decoration: underline;
+}
+.wrapper .btn {
+width: 100%;
+height: 50px;
+background: #fff;
+border: none;   
+outline: none;
+border-radius: 40px;
+box-shadow: 0 10px rgba(0, 0, 0, 1);
+cursor: pointer; 
+font-size: 16px;
+color: #333;
+font-weight: 600;
+
+}
+
+.wrapper .register-link {
+font-size: 13.5px;
+text-align: center; 
+margin: 20px 0 15px;
+
+}
+.register-link pa { color: #fff;
+text-decoration: none;
+font-weight: 600;
+}
+
+.register-link p a:hover { 
+    text-decoration: underline;
+}
+
+.link{
+    color: #40ff00;
+}
+
+span{
+    width: 50px;
+}
+.btn-secondary{
+    
+    width: 50px;
+    background-color: purple;
+}
+
+a{
+    text-decoration: none
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+
+    </style>
+    <script>
+        function closeButton() {
+            
+            float: right;
+            var pdfUrl = "{% url 'home' %}";
+            window.open(pdfUrl);
+        }
+        </script>
+    <title>Sign Up</title>
+</head>
+<body>
+
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="closeButton" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        {% endfor %}
+
+
+
+    <div class="wrapper">
+        <a href="{% url 'home' %}"><button class="btn-secondary" ><span class = "close" aria-hidden="true" onclick="close()">&times;</span></a></button>
+    <form action="/signup" method="post">
+        {% csrf_token %} 
+            <h1>Sign UP</h1>
+            <div class="input-box">
+            <label for=""> Username: </label>
+            <input type="text" id = "username"  name="username" placeholder="Create a username only letters, numbers" required>
+            <i class='bx bxs-user'></i>
+            <br>
+            </div>
+            <div class="input-box">
+            <label for=""> First name: </label>
+            <input type="text" id = "fname"  name="fname" placeholder="First Name" required>
+            <i class='bx bxs-user'></i>
+            <br>
+        </div>
+            <div class="input-box">
+            <label for=""> Last name: </label>
+            <input type="text" id = "lname" name="lname" placeholder="Last Name" required>
+            <i class='bx bxs-user'></i>
+            <br>
+        </div>
+            <div class="input-box">
+            <label for=""> Email address: </label>
+            <input type="email" id = "email"  name="email" placeholder="Enter a valid email address" required>
+            <i class='bx bxs-user'></i>
+            <br>
+        </div>
+            <div class="input-box">
+            <label for=""> password: </label>
+            <input type="password" id = "pass1" name="pass1" placeholder="Create a password "  required>
+            <i class='bx bxs-user'></i><br>
+        </div>
+            <div class="input-box">
+            <label for=""> Confirm password: </label>
+            <input type="password" id = "pass2"  name="pass2" placeholder="Confirm password" required>
+            <i class='bx bxs-user'></i><br>
+        </div>
+        <div class="register-link"><P>Already Registered <a class = "link" href="{% url 'signin' %}">Click here</a></P></div>
+            <button type="submit"class ="btn"> Sign Up</button>
+    </form>
+</div>
+</body>
+</html>

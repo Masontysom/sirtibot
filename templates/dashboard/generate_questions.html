@@ -1,0 +1,84 @@
+
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+    <style xmlns="http://www.w3.org/1999/html">
+    </style>
+{% endblock %}
+{% block page_title %}
+ Grid
+{% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Questions and Answers</title>
+</head>
+<body>
+    <h1>Generate Questions and Answers</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="input_text">Enter Text:</label>
+        <textarea id="input_text" name="input_text" rows="4" cols="50"></textarea>
+        <button type="submit">Generate</button>
+    </form>
+    
+    {% if questions %}
+    <h2>Generated Questions:</h2>
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Action</th>
+        </tr>
+        {% for question in questions %}
+        <tr>
+            <td>{{ question }}</td>
+            <td>
+                <form method="post" action="{% url 'dashboard:remove_question' %}">
+                {% csrf_token %}
+                <input type="hidden" name="mcq_index" value="{{ forloop.counter0 }}">
+                <button type="submit">Remove</button>
+            </form>
+        </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>
+
+
+
+
+
+<!-- <html>
+<head>
+    <title>Generate Theoretical Questions</title>
+</head>
+<body>
+    <h1>Welcome, {{ request.user.username }}!</h1>
+    <h1>Generate Theoretical Questions</h1>
+    
+    <form method="post" action="{% url 'dashboard:generate_questions' %}">
+        {% csrf_token %}
+        <label for="paragraph">Input Paragraph:</label><br>
+        <textarea id="paragraph" name="paragraph" rows="4" cols="50" required></textarea><br><br>
+
+        <input type="submit" value="Generate Questions">
+    </form>
+
+    {% if generated_questions %}
+        <h2>Generated Questions:</h2>
+        <ul>
+            {% for question in generated_questions %}
+                <li>{{ question }}</li>
+                <strong>Answer:</strong> {{ question_answers|default:"No answer found." }}
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html> -->
+
+
+{% endblock %}

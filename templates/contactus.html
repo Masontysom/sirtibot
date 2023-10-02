@@ -1,0 +1,97 @@
+{% include "header.html" %}
+<!--Contact form-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 80px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    padding: 10px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+
+    <title>Contact Us</title>
+</head>
+<body>
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <h4>Contact us directly if you have any questions</h4>
+        <p>Please write your name and a message below if you have any questions. One of us will be happy to contact you directly and answer your questions as soon as possible.</p>
+        <form action="mailto:sertibotapp@gmail.com" method="post" enctype="text/plain">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" required></td>
+                </tr>
+                <tr>
+                    <td>Message:</td>
+                    <td><textarea name="Message" rows="4" required></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Send"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+

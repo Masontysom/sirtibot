@@ -1,0 +1,81 @@
+
+{% extends "base.html" %}
+{% include "dashboard/dependencies.html" %}  
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+    <style xmlns="http://www.w3.org/1999/html">
+    </style>
+{% endblock %}
+{% block page_title %}
+ Grid
+{% endblock %}
+{% block content %} 
+<!-- question_paper.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question Paper</title>
+    <script>
+        function openPDFInNewTab() {
+            // Define the URL of your PDF file (replace 'your_pdf_url.pdf' with the actual URL)
+            
+            var pdfUrl = "{% url 'dashboard:generate_question_paper' %}";
+        
+            // Open the PDF in a new tab
+            window.open(pdfUrl, '_blank');
+        }
+        </script>
+        
+</head>
+<body>
+    <h1>Question Paper</h1>
+    <button onclick="openPDFInNewTab()">Open PDF in New Tab</button><br><br>
+    <embed src="{% url 'dashboard:generate_question_paper' %}" width="1000" height="800" type="application/pdf">
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pdf Generator</h1>
+        <form action="{% url 'dashboard:generate_pdf' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generate PDF</button>
+        </form>
+
+         Display the PDF content ///
+        {% if pdf_output %}
+        <hr>
+        <h2>Generated PDF:</h2>
+        <object data="data:application/pdf;base64,{{ pdf_output }}" type="application/pdf" width="100%" height="600px">
+            <p>Your browser does not support PDF viewing.</p>
+        </object>
+        {% endif %}
+    </div>
+</body>
+</html> -->
+
+{% endblock %}

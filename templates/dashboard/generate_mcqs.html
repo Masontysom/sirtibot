@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+
+{% endblock %}
+{% block page_title %}
+Chart
+{% endblock %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate MCQs</title>
+    <style>
+        .table,td,tr,th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    {% if error_message %}
+    <div class="alert alert-danger" role="alert">
+        {{ error_message }}
+    </div>
+    {% endif %}
+    <h1>Welcome, {{ request.user.username }}!</h1> 
+    <h1>Generate MCQs</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="input_text">Enter Paragraph:</label>
+        <textarea id="input_text" name="input_text" rows="4" cols="50"></textarea>
+        <button type="submit">Generate MCQs</button>
+    </form>
+    
+    {% if generated_mcqs %}
+    <h2>Generated MCQs:</h2>
+    
+    <table >
+        <tr>
+            <th>Sr. No</th>
+            <th>Question</th>
+            <th>Options</th>
+            <th>Answer</th>
+            <th>Action</th>
+        </tr>
+        {% for mcq in generated_mcqs %}
+        <tr>
+            <td>{{ forloop.counter }}</td> 
+            <td>{{ mcq.question }}</td>
+            <td>
+                <ul>
+                    {% for option in mcq.options %}
+                    <li>{{ option }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+            <td>{{ mcq.correct_answer }}</td>
+            <td>
+                <form method="post" action="{% url 'dashboard:remove_mcq' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="mcq_index" value="{{ forloop.counter0 }}">
+                    <button type="submit">Remove</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No MCQs available. Generate some MCQs to see the results.</p>
+    {% endif %}
+</body>
+</html>
+
+
+
+
+<!-- <html>
+<head>
+    <title>Generate MCQs</title>
+</head>
+<body>
+    {% if error_message %}
+        <div class="alert alert-danger" role="alert">
+            {{ error_message }}
+        </div>
+    {% endif %}
+    <h1>Welcome, {{ request.user.username }}!</h1>
+    <h1>Generate MCQs</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="input_text">Enter Paragraph:</label>
+        <textarea id="input_text" name="input_text" rows="4" cols="50"></textarea>
+        <button type="submit">Generate MCQs</button>
+    </form>
+    
+    {% if generated_mcqs %}
+    <h2>Generated MCQs:</h2>
+    <ul>
+        {% for mcq in generated_mcqs %}
+        <li>{{ mcq }}</li>
+        
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>  -->
+
+
+{% endblock %}
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Generate MCQs</title>
+</head>
+<body>
+    <h1>Generate MCQs</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="input_text">Enter Text:</label>
+        <textarea id="input_text" name="input_text" rows="4" cols="50"></textarea>
+        <button type="submit">Generate MCQs</button>
+    </form>
+    {% if generated_mcqs %}
+    <h2>Generated MCQs:</h2>
+    <table border="1">
+        <tr>
+            <th>Question</th>
+            <th>Choices</th>
+            <th>Answer</th>
+        </tr>
+        {% for mcq in generated_mcqs %}
+        <tr>
+            <td>{{ mcq.question }}</td>
+            <td>
+                <ul>
+                    {% for choice in mcq.choices %}
+                    <li>{{ choice }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+            <td>{{ mcq.choices.0 }}</td>  {# Displaying the first choice as the answer #}
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html> -->
+
+
+
+

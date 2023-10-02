@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Question Paper Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom CSS Styling */
+        
+
+        .jumbotron {
+            
+            
+            text-align: center;
+        }
+
+        .jumbotron h1 {
+            font-size: 3rem;
+        }
+
+        .lead {
+            font-size: 1.5rem;
+        }
+
+        .buttons-section {
+            margin-top: 20px;
+        }
+
+        .buttons-section button {
+            margin-right: 10px;
+        }
+
+        .features-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+        }
+
+        .how-it-works {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include your header here -->
+    {% include "header.html" %}
+
+    <!-- Alert Messages -->
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+    <main class="container mt-5">
+        <div class="jumbotron">
+            <h1 class="display-4">Welcome to the Automatic Question Paper Generator!</h1>
+            <p class="lead">Generate customized question papers for your exams.</p>
+            <hr class="my-4">
+            {% if user.is_authenticated %}
+            <h3>Hello, <span id="userName">{{ fname }}</span>!</h3>
+            <h4>You are successfully logged in!</h4>
+
+            <h6>To Generate a Question Paper, Click on Dashboard</h6>
+
+            <button class="btn btn-primary btn-lg" id="signout-button"><a href="signout"> Sign out</a></button>
+            <button class="btn btn-primary btn-lg" id="dashboard-button"><a href="dashboard"> Dashboard</a></button>
+            {% else %}
+            <section class="buttons-section text-center mt-4">
+                <button class="btn btn-secondary btn-lg mr-3" id="signin-button"> <a href="signup"> Sign up</a> </button>
+                <button class="btn btn-primary btn-lg" id="signup-button"><a href="signin"> Sign in</a></button>
+            </section>
+            {% endif %}
+        </div>
+
+        <!-- Additional Content for the Automatic Question Paper Generator -->
+        <section class="features-section mt-5">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Customized question paper generation</li>
+                <li>User-friendly interface</li>
+                <li>Secure login and sign-up</li>
+                <li>Dashboard for managing question papers</li>
+                <li>Efficient and time-saving</li>
+            </ul>
+        </section>
+
+        <section class="how-it-works mt-5">
+            <h2>How It Works</h2>
+            <p>Creating question papers has never been easier:</p>
+            <ol>
+                <li>Sign in or sign up for an account.</li>
+                <li>Access the dashboard to start generating question papers.</li>
+                <li>Customize your question paper with ease.</li>
+                <li>Download the generated question paper for your exams.</li>
+            </ol>
+        </section>
+
+        <footer class="footer text-center py-3">
+            <p>&copy; 2023 Automatic Question Paper Generator</p>
+        </footer>
+    </main>
+
+    <!-- JavaScript for User Interaction -->
+    <script>
+        // Example JavaScript for interactivity
+        document.getElementById("signout-button").addEventListener("click", function () {
+            // Handle signout logic here, e.g., clearing user session
+            alert("You are signed out.");
+        });
+
+        document.getElementById("dashboard-button").addEventListener("click", function () {
+            // Redirect to the dashboard page
+            window.location.href = "dashboard";
+        });
+    </script>
+</body>
+</html>

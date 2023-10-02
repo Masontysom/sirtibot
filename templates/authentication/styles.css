@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.jumbotron {
+    background-color: #f8f9fa;
+}
+
+.footer {
+    background-color: #f8f9fa;
+}
+
+.buttons-section {
+    margin-top: 2rem;
+}

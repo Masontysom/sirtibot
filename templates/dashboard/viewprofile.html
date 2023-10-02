@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% include "dashboard/dependencies.html" %}  
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+    <style xmlns="http://www.w3.org/1999/html">
+    </style>
+{% endblock %}
+{% block page_title %}
+ Grid
+{% endblock %}
+{% block content %} 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <!-- Add your CSS styles here if needed -->
+</head>
+<body>
+    <h1>User Profile</h1>
+    <p>Welcome, {{ user.username }}!</p>
+    <ul>
+        <li><strong>Username:</strong> {{ user.username }}</li>
+        <li><strong>First Name:</strong> {{ user.first_name }}</li>
+        <li><strong>Last Name:</strong> {{ user.last_name }}</li>
+        <li><strong>Email:</strong> {{ user.email }}</li>
+        <!-- Add other user-related data here -->
+    </ul>
+    <!-- Add additional content or functionality as needed -->
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity=
+"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+ 
+    <!--import jquery cdn-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity=
+"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous">
+    </script>
+     
+    <script src=
+"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity=
+"sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous">
+    </script>
+    <style>
+    
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+    body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    }
+    a {
+    text-decoration: none;
+    color: #000;
+    }
+    a:hover {
+    color: rgb(179, 179, 179);
+    }
+    .site-header {
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: space-between;
+    }
+    .site-identity h1 {
+    font-size: 1.5em;
+    margin: 0.6em 0;
+    display: inline-block;
+    }
+    .site-navigation ul,
+    .site-navigation li {
+    margin: 0;
+    padding: 0;
+    }
+    .site-navigation li {
+    display: inline-block;
+    margin: 1.4em 1em 1em 1em;
+    }
+    .header-button{
+    font-family: "Open Sans", sans-serif;
+    background: none;
+    border: none;
+    margin: 0;
+    font-size: 14.5px;
+    text-emphasis-color: #000;
+    
+    }
+        </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-identity">
+            <img src="{% static 'images/logo.png' %}" alt="homepage" class="light-logo" />
+        </div>
+        <nav class="site-navigation">
+            <ul class="nav">
+                <li class="nav-item"><a href='/' class="nav-link" >Home</a></li>
+                <li class="nav-item"><a href="aboutus" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="contactus" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>  
+    </header>
+</body>

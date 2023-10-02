@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% include "dashboard/dependencies.html" %}  
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+<style xmlns="http://www.w3.org/1999/html">
+</style>
+{% endblock %}
+{% block page_title %}
+Upload Excel File
+{% endblock %}
+{% block content %} 
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Excel File</title>
+</head>
+<body>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Upload Excel File</h4>
+            <form class="form-horizontal" method="post" enctype="multipart/form-data" action="{% url 'dashboard:upload_and_display_excel' %}">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="excel_file" class="col-sm-3 text-right control-label col-form-label">Upload Excel File:</label>
+                    <div class="col-sm-9">
+                        <input type="file" class="form-control-file" id="excel_file" name="excel_file" accept=".xlsx, .xls">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12 text-center">
+                        <button type="submit" class="btn btn-primary">Upload and Display</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {% if data_from_excel %}
+    <div class="mt-4">
+        <h4>Excel Data:</h4>
+        <ul>
+            {% for item in data_from_excel %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if error_message %}
+    <div class="alert alert-danger mt-4">
+        <p>Error: {{ error_message }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% include "dashboard/dependencies.html" %}  
+{% load i18n %}
+{% load static %}
+{% block extra_css %}
+    <style xmlns="http://www.w3.org/1999/html">
+    </style>
+{% endblock %}
+{% block page_title %}
+ Grid
+{% endblock %}
+{% block content %} 
+
+<!-- generate_question_form.html -->
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Question Paper</title>
+    <script>
+        function openPDFInNewTab() {
+            // Define the URL of your PDF file (replace 'your_pdf_url.pdf' with the actual URL)
+            
+            var pdfUrl = "{% url 'dashboard:generate_question_paper_form' %}";
+        
+            // Open the PDF in a new tab
+            window.open(pdfUrl, '_blank');
+        }
+        </script>
+</head>
+<body>
+            <div class="card">
+                <form class="form-horizontal" method="post" action="{% url 'dashboard:generate_question_paper_form' %}">
+                    {% csrf_token %}
+                    <div class="card-body">
+                        <h4 class="card-title">Generate Question Paper</h4>
+                        <div class="form-group row">
+                            <label for="college_name" class="col-sm-3 text-right control-label col-form-label">Constituent College Name:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="college_name" name="college_name" required placeholder="Constituent College Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="department_name" class="col-sm-3 text-right control-label col-form-label">Department Name:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="department_name" name="department_name" required placeholder="Department Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="course_name" class="col-sm-3 text-right control-label col-form-label">Name of Course:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="course_name" name="course_name" required placeholder="Name of Course">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="max_marks" class="col-sm-3 text-right control-label col-form-label">Max. Marks of paper want to set:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="max_marks" name="max_marks" required placeholder="Max. Marks of paper want to set">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="duration" class="col-sm-3 text-right control-label col-form-label">Duration of question paper:</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="duration" name="duration" required placeholder="Duration of question paper">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="examination" class="col-sm-3 text-right control-label col-form-label">Examination(eg.: End Semester -IV Examination ):</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="examination" name="examination" required placeholder="Examination Name">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="date" class="col-sm-3 text-right control-label col-form-label">Date of Examination:</label>
+                            <div class="col-sm-9">
+                                <input type="date" class="form-control" id="date" name="date" required placeholder="Date of Examination">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add checkboxes for MCQs and Questions -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 text-right control-label col-form-label">Select Sections:</label>
+                        <div class="col-sm-9">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="mcqCheckbox" name="mcqCheckbox">
+                                <label class="form-check-label" for="mcqCheckbox">Include MCQs</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="questionsCheckbox" name="questionsCheckbox">
+                                <label class="form-check-label" for="questionsCheckbox">Include Questions</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border-top">
+                        <div class="card-body">
+                            <button type="submit" class="btn btn-primary" onclick="openPDFInNewTab()">Generate PDF</button>
+                        </div>
+                    </div>
+                    
+                    
+                </form>
+            </div>
+            
+                  
+</body>
+</html>
+
+
+{% endblock %}
