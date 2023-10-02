@@ -49,6 +49,7 @@ It will take some time for nltk to download and pwd so be patient.
   done then manage.py command and set to go.
 
 
+To change the api dashboard/view.py line 385
 
 (error)
 if any error in data base :
