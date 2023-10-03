@@ -380,9 +380,8 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
-# Set your OpenAI API key----- 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
-#'''Subscription Api Key ---- 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'''
-openai.api_key = "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"
+
+openai.api_key = "    Api Key   "
 
 @login_required
 def generate_questions(request):
