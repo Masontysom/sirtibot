@@ -38,7 +38,7 @@ ALLOWED_HOSTS = []
 
 
 # mcq_generation_project
-OPENAI_API_KEY = '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'
+OPENAI_API_KEY = 'API KEY HEAR '
 # Application definition
 
 INSTALLED_APPS = [
