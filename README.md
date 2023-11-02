@@ -49,7 +49,7 @@ It will take some time for nltk to download and pwd so be patient.
   done then manage.py command and set to go.
 
 
-To change the api to get the question to be generated, dashboard/view.py line 385 and setting line 41
+Change the api to get the question to be generated, dashboard/view.py line 385 and setting line 41
 https://github.com/Masontysom/sirtibot/blob/297df97261c52a3540a0ffdc3682af0fee3da7cb/dashboard/views.py#L384
 https://github.com/Masontysom/sirtibot/blob/297df97261c52a3540a0ffdc3682af0fee3da7cb/sertibot/settings.py#L41
 
