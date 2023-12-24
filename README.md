@@ -1,6 +1,6 @@
 # Sirtibot
 Automatic Question Paper Generator
-
+need python version == Python 3.8.6
 In today’s educational landscape, the demand for efficient and streamlined processes has grown exponentially. One such critical task is the generation of question papers, which requires careful consideration of various factors like question bank management, subject distribution, difficulty levels, and formatting. To address this challenge, we have developed an automated Question Paper Generator using Django Python. 
 
 Introducing Sirtibot: Revolutionizing Question Paper Generation
@@ -18,6 +18,9 @@ pip install Pywsd
 pip install summarizer
 pip install fpdf
 pip install openpyxl
+python -m spacy download en
+pip install torch
+pip install bert-extractive-summarizer
 ```
 
 MCQ Generation Logic: The logic for preprocessing text, extracting keywords, generating summaries, and generating MCQs from the processed text. It follows the pattern of uploading a text file, reading its content, and then performing the required processing steps.
@@ -54,6 +57,12 @@ https://github.com/Masontysom/sirtibot/blob/297df97261c52a3540a0ffdc3682af0fee3d
 https://github.com/Masontysom/sirtibot/blob/297df97261c52a3540a0ffdc3682af0fee3da7cb/sertibot/settings.py#L41
 
 (error)
+if the pke is not working run this: -
+```
+pip install git+https://github.com/boudinfl/pke.git
+```
+
+
 if any error in data base :
 ```
 python manage.py migrate
