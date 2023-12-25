@@ -20,10 +20,10 @@ pip install summarizer
 pip install fpdf
 pip install openpyxl
 python -m spacy download en
+pip install git+https://github.com/boudinfl/pke.git
 pip install torch
 pip install bert-extractive-summarizer
 ```
-
 MCQ Generation Logic: The logic for preprocessing text, extracting keywords, generating summaries, and generating MCQs from the processed text. It follows the pattern of uploading a text file, reading its content, and then performing the required processing steps.
 
 Question : openai, Api is used in it.
@@ -58,10 +58,7 @@ https://github.com/Masontysom/sirtibot/blob/297df97261c52a3540a0ffdc3682af0fee3d
 https://github.com/Masontysom/sirtibot/blob/297df97261c52a3540a0ffdc3682af0fee3da7cb/sertibot/settings.py#L41
 
 (error)
-if the pke is not working run this: -
-```
-pip install git+https://github.com/boudinfl/pke.git
-```
+
 
 
 if any error in data base :
