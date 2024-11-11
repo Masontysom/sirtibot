@@ -1,0 +1,13 @@
+pip install django
+pip install nltk
+pip install transformers
+pip install openai
+pip install flashtext
+pip install Pywsd
+pip install summarizer
+pip install fpdf
+pip install openpyxl
+python -m spacy download en
+pip install git+https://github.com/boudinfl/pke.git
+pip install torch
+pip install bert-extractive-summarizer
