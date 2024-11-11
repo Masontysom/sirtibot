@@ -2,7 +2,7 @@ version: 1
 services:
   - type: web
     name: sirtibot
-    env: python-3.8.6
+    env: python-3.8
     plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn sirtibot.wsgi:application
