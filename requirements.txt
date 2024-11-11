@@ -1,15 +1,15 @@
 
 
-django==3.2.9
-nltk==3.6.3
-transformers==4.12.0
-openai==0.11.3
-flashtext==2.7
-Pywsd==1.0.4
-summarizer==0.7.0
-fpdf==1.7.2
-openpyxl==3.0.9
-spacy==3.1.3
-torch==1.10.0
+django
+nltk
+transformers
+openai
+flashtext
+Pywsd
+summarizer
+fpdf
+openpyxl
+spacy
+torch
 bert-extractive-summarizer
 git+https://github.com/boudinfl/pke.git
