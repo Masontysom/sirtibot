@@ -32,9 +32,9 @@ EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 SECRET_KEY = 'django-insecure-8@sjhbu+__%sd_ru-*7)l8u9svvzsa#v2ww0#8ap717#7a(i#4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [sirtibot-sirtibot.herokuapp.com]
 
 
 # mcq_generation_project
@@ -149,7 +149,7 @@ urlpatterns = [
 
 # Static files (CSS, JavaScript, images)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
 
 # # # Session engine (use cache-based sessions)
 # SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
@@ -171,3 +171,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
         # STATICFILES_DIRS=(
         #     os.path.join(BASE_DIR,'static'),
         # )
+
+import django_heroku
+django_heroku.settings(locals())
