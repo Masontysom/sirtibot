@@ -1,11 +1,10 @@
 # Sirtibot
-Automatic Question Paper Generator
+AI-Powered Automatic Question Paper Generator
 need python version == Python 3.8.6
 
-In today’s educational landscape, the demand for efficient and streamlined processes has grown exponentially. One such critical task is the generation of question papers, which requires careful consideration of various factors like question bank management, subject distribution, difficulty levels, and formatting. To address this challenge, we have developed an automated Question Paper Generator using Django Python. 
+In the evolving educational landscape, the need for efficient and streamlined processes has never been greater. Sirtibot is an innovative solution designed to automate the generation of question papers using advanced artificial intelligence and Django Python. This tool is crafted to handle various aspects of question paper creation, MCQ GENERATION using logic for preprocessing text, extracting keywords, generating summaries, and generating MCQs from the processed text or .txt file, Question Generation using openai-api,formatting and generating Question paper PDF and formatting to create thoughtful, diverse and impeccably balanced question papers.
 
-Introducing Sirtibot: Revolutionizing Question Paper Generation
-In the fast-paced world of education, where instructors strive to provide high quality assessments and enriching learning experiences, a cutting-edge tool emerges to simplify a critical task – the creation of question papers. 
+
 Welcome to Sirtibot, your indispensable partner in crafting thoughtful, diverse, and impeccably balanced question papers.
 
 To run the file user should run the folling pip commands in the command prompt : 
@@ -24,7 +23,7 @@ pip install git+https://github.com/boudinfl/pke.git
 pip install torch
 pip install bert-extractive-summarizer
 ```
-MCQ Generation Logic: The logic for preprocessing text, extracting keywords, generating summaries, and generating MCQs from the processed text. It follows the pattern of uploading a text file, reading its content, and then performing the required processing steps.
+AI-Driven MCQ Generation: Utilizes cutting-edge natural language processing (NLP) techniques to preprocess text, extract keywords, generate summaries, and create multiple-choice questions (MCQs) from the processed text.
 
 Question : openai, Api is used in it.
 
