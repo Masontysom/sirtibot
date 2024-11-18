@@ -2,7 +2,9 @@
 AI-Powered Automatic Question Paper Generator
 need python version == Python 3.8.6
 
-In the evolving educational landscape, the need for efficient and streamlined processes has never been greater. Sirtibot is an innovative solution designed to automate the generation of question papers using advanced artificial intelligence and Django Python. This tool is crafted to handle various aspects of question paper creation, MCQ GENERATION using logic for preprocessing text, extracting keywords, generating summaries, and generating MCQs from the processed text or .txt file, Question Generation using openai-api,formatting and generating Question paper PDF and formatting to create thoughtful, diverse and impeccably balanced question papers.
+In the evolving educational landscape, the need for efficient and streamlined processes has never been greater. Sirtibot is an innovative solution designed to automate the generation of question papers using advanced artificial intelligence and Django Python.
+
+This tool is crafted to handle various aspects of question paper creation like MCQ GENERATION using logic for preprocessing text, extracting keywords, generating summaries, and generating MCQs from the processed text or .txt file, Question Generation using openai-api, Add questions through Excel sheets, formatting and generating Question paper PDF to create thoughtful, diverse and impeccably balanced question papers.
 
 
 Welcome to Sirtibot, your indispensable partner in crafting thoughtful, diverse, and impeccably balanced question papers.
